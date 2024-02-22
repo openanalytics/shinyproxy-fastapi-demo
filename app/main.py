@@ -1,20 +1,20 @@
 from typing import List
 from uuid import UUID, uuid4
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-from models import Gender, Role, User
-# from dotenv import load_dotenv
 from fastapi.templating import Jinja2Templates
-# import os
+from models import Gender, Role, User
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+root_path = os.getenv("SCRIPT_NAME", "")
 
 # Assign API, API title and version
 app = FastAPI()
 app.title = "Basic API with FastAPI"
 app.version = "0.0.1"
-
-
-
 
 db: List[User] = [
     User(
