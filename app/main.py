@@ -12,7 +12,7 @@ load_dotenv()
 root_path = os.getenv("SCRIPT_NAME", "")
 
 # Assign API, API title and version
-app = FastAPI()
+app = FastAPI(root_path=root_path)
 app.title = "Basic API with FastAPI"
 app.version = "0.0.1"
 
@@ -53,6 +53,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get('/', response_class=HTMLResponse, tags=['home'])
 async def message(request: Request):
+    print(root_path)
     return templates.TemplateResponse(name="htmlTemplate.html", request=request)
 
 
