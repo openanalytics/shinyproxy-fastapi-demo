@@ -19,6 +19,7 @@ proxy:
     - id: fastapi-demo
       display-name: FastAPI Demo Application
       container-image: openanalytics/shinyproxy-fastapi-demo
+      port: 8000
       target-path: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH')}"
       container-env:
         SCRIPT_NAME: "#{proxy.getRuntimeValue('SHINYPROXY_PUBLIC_PATH').replaceFirst('/$','')}"

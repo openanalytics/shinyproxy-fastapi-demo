@@ -1,15 +1,13 @@
-FROM python:3.10
+FROM python:3.12-slim
 
-RUN apt-get update
+WORKDIR /app
 
-WORKDIR /code
-
-COPY ./app /code/.
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 3838
+COPY app/ /app
 
-CMD ["uvicorn", "main:app", "--proxy-headers", "--forwarded-allow-ips", "*", "--host", "0.0.0.0", "--port", "3838"]
+EXPOSE 8000
 
+CMD ["uvicorn", "main:app", "--proxy-headers", "--forwarded-allow-ips", "*", "--host", "0.0.0.0"]
