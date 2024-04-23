@@ -24,7 +24,7 @@ To pull the image made in this repository from Docker Hub, use
 sudo docker pull openanalytics/shinyproxy-fastapi-demo
 ```
 
-the relevant Docker Hub repository can be found at https://hub.docker.com/r/openanalytics/shinyproxy-fastapi-demo
+the relevant Docker Hub repository can be found at <https://hub.docker.com/r/openanalytics/shinyproxy-fastapi-demo>
 
 To build the image from the Dockerfile, clone this repository, then navigate to its root directory and run
 
@@ -52,11 +52,12 @@ specs:
 Note that the `SCRIPT_NAME` environment variable may not end with `/`, therefore
 we have to strip it from the variable.
 
-# References
+## References
 
-- https://fastapi.tiangolo.com/tutorial/
-- https://kinsta.com/nl/blog/fastapi/
+- <https://fastapi.tiangolo.com/tutorial/>
+- <https://kinsta.com/nl/blog/fastapi/>
 - [Running Flask app in ShinyProxy](https://github.com/openanalytics/shinyproxy-flask-demo)
-
+- [ShinyProxy.io](https://shinyproxy.io/)
+- [All demos](https://shinyproxy.io/documentation/demos/)
 
 **(c) Copyright Open Analytics NV, 2024.**
