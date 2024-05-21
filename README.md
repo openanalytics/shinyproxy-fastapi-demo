@@ -24,7 +24,7 @@ To pull the image made in this repository from Docker Hub, use
 sudo docker pull openanalytics/shinyproxy-fastapi-demo
 ```
 
-the relevant Docker Hub repository can be found at <https://hub.docker.com/r/openanalytics/shinyproxy-fastapi-demo>
+the relevant Docker Hub repository can be found at <https://hub.docker.com/r/openanalytics/shinyproxy-fastapi-demo>.
 
 To build the image from the Dockerfile, clone this repository, then navigate to its root directory and run
 
@@ -39,7 +39,8 @@ configuration file (see [application.yml](./application.yml) for a complete
 file):
 
 ```yaml
-specs:
+proxy:
+  specs:
     - id: fastapi-demo
       display-name: FastAPI Demo Application
       container-image: openanalytics/shinyproxy-fastapi-demo
